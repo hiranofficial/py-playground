@@ -1,0 +1,63 @@
+{
+  "artifact": {
+    "file": "iris-logreg-v1.onnx",
+    "format": "onnx",
+    "opset": 17,
+    "sha256": "57fb65caacedc87a01b81fa2bdb22af2db55510b48cfff965037f0349485e493"
+  },
+  "artifact_version": "iris-logreg-v1",
+  "features": [
+    {
+      "dtype": "float32",
+      "name": "sepal_length_cm",
+      "order": 0,
+      "unit": "cm"
+    },
+    {
+      "dtype": "float32",
+      "name": "sepal_width_cm",
+      "order": 1,
+      "unit": "cm"
+    },
+    {
+      "dtype": "float32",
+      "name": "petal_length_cm",
+      "order": 2,
+      "unit": "cm"
+    },
+    {
+      "dtype": "float32",
+      "name": "petal_width_cm",
+      "order": 3,
+      "unit": "cm"
+    }
+  ],
+  "labels": [
+    {
+      "class_id": 0,
+      "name": "setosa"
+    },
+    {
+      "class_id": 1,
+      "name": "versicolor"
+    },
+    {
+      "class_id": 2,
+      "name": "virginica"
+    }
+  ],
+  "producer": {
+    "scikit_learn_version": "1.7.2",
+    "skl2onnx_version": "1.19.1"
+  },
+  "runtime": {
+    "input_name": "features",
+    "label_output": "label",
+    "probabilities_output": "probabilities"
+  },
+  "schema_version": 1,
+  "training_data": {
+    "name": "scikit-learn built-in Iris dataset",
+    "reference": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html"
+  }
+}
