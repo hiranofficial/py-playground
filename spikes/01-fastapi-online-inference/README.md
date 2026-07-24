@@ -13,9 +13,10 @@ Startup reads `MODEL_MANIFEST_PATH` (default `models/iris-logreg-v1.json`), vali
 
 ## Run locally
 
-From `fastapi/` with Python 3.12 or newer:
+From the repository root, enter this self-contained spike, then use Python 3.12 or newer:
 
 ```bash
+cd spikes/01-fastapi-online-inference
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -53,6 +54,8 @@ MODEL_MANIFEST_PATH=models/iris-logreg-v2.json uvicorn app.main:app --port 8000
 
 ## Test
 
+From `spikes/01-fastapi-online-inference/` with the virtual environment active:
+
 ```bash
 pytest -q
 ```
@@ -61,7 +64,7 @@ Tests export isolated ONNX packages and cover health, readiness, a representativ
 
 ## Container and route to live
 
-The image trains the deterministic package during the build and runs as a non-root user:
+From `spikes/01-fastapi-online-inference/`, the image trains the deterministic package during the build and runs as a non-root user. Compose resolves its `build: .` context to this spike directory:
 
 ```bash
 docker compose up --build
